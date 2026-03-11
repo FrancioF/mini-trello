@@ -12,6 +12,6 @@
     <br>
     <input type="email" name="email" value="{{ $user->email }}" required>
     <br>
-    <button type="submit">Modifier</button>
+    <button type="submit" class="button">Modifier</button>
 </form>
 @endsection

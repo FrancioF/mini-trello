@@ -9,7 +9,7 @@ h1 {
     color: #2c3e50;
 }
 
-a {
+a.button {
     text-decoration: none;
     color: white;
     background-color: #3490dc;
@@ -18,11 +18,11 @@ a {
     margin-right: 5px;
 }
 
-a:hover {
+a.button:hover {
     background-color: #2779bd;
 }
 
-button {
+button.delete {
     background-color: #e3342f;
     color: white;
     border: none;
@@ -31,16 +31,37 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button.delete:hover {
     background-color: #cc1f1a;
 }
 
-form {
-    display: inline;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #3490dc;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
 input[type="text"], input[type="email"] {
     padding: 5px;
     margin: 5px 0;
-    width: 200px;
+    width: 250px;
+}
+
+form.inline {
+    display: inline;
 }

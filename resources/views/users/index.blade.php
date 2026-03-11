@@ -1,20 +1,31 @@
-@extends('layouts.app')
-
-@section('title', 'Liste des utilisateurs')
-
-@section('content')
-<h1>Liste des utilisateurs</h1>
-<a href="{{ route('users.create') }}">Ajouter un utilisateur</a>
-
-@foreach($users as $user)
-<p>
-    {{ $user->name }} - {{ $user->email }}
-    <a href="{{ route('users.edit', $user->id) }}">Modifier</a>
-    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Supprimer</button>
-    </form>
-</p>
-@endforeach
-@endsection
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse($users as $user)
+        <tr>
+            <td>{{ $user->id }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>
+                <a href="{{ route('users.edit', $user->id) }}" class="button">Modifier</a>
+                <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="delete">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+        @empty
+        <tr>
+            <td colspan="4">Aucun utilisateur trouvé</td>
+        </tr>
+        @endforelse
+    </tbody>
+</table>

@@ -11,6 +11,6 @@
     <br>
     <input type="email" name="email" placeholder="Email" required>
     <br>
-    <button type="submit">Enregistrer</button>
+    <button type="submit" class="button">Enregistrer</button>
 </form>
 @endsection
