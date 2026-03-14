@@ -20,7 +20,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 |--------------------------------------------------------------------------
 */
 
-Route::get('/user/{id}', [UserController::class, 'profile'])->name('user.profile');
+
 
 /*
 |--------------------------------------------------------------------------
