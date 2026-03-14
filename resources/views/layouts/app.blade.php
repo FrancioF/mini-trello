@@ -42,7 +42,7 @@
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="/user/1">Profil</a>
+<a class="nav-link" href="/users/create">Profil</a>
 </li>
 
 </ul>

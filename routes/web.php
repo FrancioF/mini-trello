@@ -6,6 +6,8 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Page d'accueil (Dashboard)
@@ -20,7 +22,17 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 |--------------------------------------------------------------------------
 */
 
-Route::get('/user/{id}', [UserController::class, 'profile'])->name('user.profile');
+Route::get('/users', [UserController::class,'index'])->name('users.index');
+
+Route::get('/users/create', [UserController::class,'create'])->name('users.create');
+
+Route::post('/users', [UserController::class,'store'])->name('users.store');
+
+Route::get('/users/{id}/edit', [UserController::class,'edit'])->name('users.edit');
+
+Route::put('/users/{id}', [UserController::class,'update'])->name('users.update');
+
+Route::delete('/users/{id}', [UserController::class,'destroy'])->name('users.destroy');
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +59,4 @@ Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
 Route::post('/tasks/{id}/assign', [TaskController::class, 'assign'])->name('tasks.assign');
 
 Route::post('/tasks/{id}/status', [TaskController::class, 'updateStatus'])->name('tasks.status');
+
