@@ -12,10 +12,10 @@ class HomeController extends Controller
     {
         $projects = Project::count();
         $tasks = Task::count();
-        $users = User::count();
+        //$users = User::count();
 
         $latestTasks = Task::latest()->take(5)->get();
 
-        return view('home', compact('projects','tasks','users','latestTasks'));
+        return view('home', compact('projects','tasks','latestTasks'));
     }
 }

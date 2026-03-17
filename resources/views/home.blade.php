@@ -23,7 +23,7 @@
 <div class="col-md-4">
 <div class="card dashboard-card">
 <h5>Utilisateurs</h5>
-<div class="stat-number">{{ $users }}</div>
+<div class="stat-number">0</div>
 </div>
 </div>
 
